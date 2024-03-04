@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="min-h-full">
+  <nav class="bg-stone-700">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-16 w-16" src=".\dist\img\keyHome.webp" alt="logo">
+            
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="../Home.html"  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
+              <a href="favotite.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Favorite 🤍</a>
+              <a href="postAdd.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">post Ad 📝</a>
+              <a href="searchType.html" class="bg-black text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Search 🔍</a>
+              
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-4 flex items-center md:ml-6">
+            <button type="button" class="relative rounded-full bg-white p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">View notifications</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+              </svg>
+            </button>
+            <div class="relative ml-3">
+            <a href="profile.html" class="hover:opacity-90"><img class="h-8 w-8 relative flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2
+            focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"  aria-expanded="false" aria-haspopup="true" src=".\dist\img\profile_3106921.png" alt=""></a>
+            </div>
+            <!-- Profile dropdown -->
+             
+          
+            </div>
+          </div>
+        </div> 
+        <div class="-mr-2 flex md:hidden">
+          <!-- Mobile menu button -->
+          <button type="button" id="mobile-menu-toggle" class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <!-- Menu open: "hidden", Menu closed: "block" -->
+            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!-- Menu open: "block", Menu closed: "hidden" -->
+            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+   
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div  id="mobile-menu"  class="md:hidden top-68 justify-center absolute hidden 
+    w-full origin-top animate-open-menu flex-col bg-stone-700 text-white">
+      
+      <nav class="flex min-h-screen flex-col items-center py-8" aria-label="mobile">
+        <a href="../Home.html" class="bg-black text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+        <a href="favotite.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Favorite 🤍</a>
+        <a href="postAdd.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">post Ad 📝</a>
+        <a href="searchType.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Search 🔍</a>
+        
+      </nav> </div>
+     
+  </nav>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuToggle.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+  </nav>
+  </header>
+    <section id="search" class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6" style="min-height: 600px;">
+        <h2 class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
+          
+        </h2>
+       
+        <div>
+    
+<!--//////////////////////////////////-->
+<label id="listbox-label" class=" flex justify-center text-3xl font-medium leading-6 text-gray-900 ">Pick the place type</label>
+         
+            <div class="mt-10 flex justify-center">
+              <a href="chooseCity.html" class="hover:opacity-90 "><button type="submit" class="block  rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Choose</button>
+            </a>
+            </div>
+            <div class="relative mt-2">
+            <select id="city" name="city" class="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+             
+              <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            
+      
+            <ul class="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+             
+              <li class="text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                <div class="flex items-center">
+                
+                  <option href="results.html" onclick="selectCity('Akko')">
+                    <option class="font-normal ml-3 block truncate">🏚️ Apartment</option>
+                  </option>
+                  
+                  <!--<a href="results.html" class="hover:opacity-90"><span class="font-normal ml-3 block truncate">Akko</span></a>-->
+                </div>
+        
+                
+                <span class="text-indigo-600 absolute inset-y-0 right-0 flex items-center pr-4">
+                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                
+              </li>
+        
+              <button id="cityButton" type="button" class="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                <span class="flex items-center">
+                  <option id="selectedCity" class="ml-3 block truncate">🏚️studio</option>
+                </span>
+              
+              </button>
+
+              <!-- More items... -->
+              <li class="text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                <div class="flex items-center">
+                  
+                  <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                  <!--<span class="font-normal ml-3 block truncate">Haifa</span>-->
+                  <option href="results.html" onclick="selectCity('Haifa')">
+                    <span class="font-normal ml-3 block truncate">🏚️villa</span>
+                  </option>
+                 <!--- <a href="results.html" class="hover:opacity-90"><span class="font-normal ml-3 block truncate">Haifa</span></a>-->
+                </div>
+              </li>
+  
+              <li class="text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                <div class="flex items-center">
+                  
+                  <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                  <option class="font-normal ml-3 block truncate">🏚️offices</option>
+                </div>
+              </li>
+  
+              <li class="text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                <div class="flex items-center">
+                  
+                  <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                  <option class="font-normal ml-3 block truncate">🏚️Storage</option>
+                </div>
+              </li>
+  
+              <li class="text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                <div class="flex items-center">
+                  
+                  <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                  <option class="font-normal ml-3 block truncate">🏚️Halls</option>
+                </div>
+              </li>
+  
+              <li class="text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                <div class="flex items-center">
+                  
+                  <option class="font-normal ml-3 block truncate">🏚️Stores</option>
+                </div>
+              </li>
+        
+            </ul>
+          </div>
+        </div>
+      </select>
+      <div class="relative mt-2">
+        <select >
+          <option>Rent</option>
+          <option>Sale</option>
+        </select>
+      </div>
+
+      </section>
+      <footer id="footer" class="bg-stone-700 text-xl text-white">
+        <section class="mx-auto flex max-w-4xl flex-col p-4 sm:flex-row sm:justify-between">
+          <address>
+            <h2>Real Estate .</h2>
+            500,000+ Property<br />
+            Israel, Akko 11/76<br />
+            Email:
+            <a href="mailto:inquiries@acmerockets.com">Inquires@PIK.com</a><br />
+            Phone: <a href="tel:+15555555555">(555) 555-5555</a>
+          </address>
+          <nav class="hidden flex-col gap-2 md:flex" aria-label="footer">
+            <a href="#hero" class="hover:opacity-90">Home</a>
+            <a href="#Post Ad" class="hover:opacity-90">post Ad 📝</a>
+            <a href="#search" class="hover:opacity-90">Search 🔍</a>
+          </nav>
+          <div class="flex flex-col sm:gap-2">
+            <p class="text-right">Copyright &copy; <span id="year">2024</span></p>
+            <p class="text-right">All Rights Reserved</p>
+          </div>
+        </section>
+      </footer>
+
+
+</body>
+<script src="https://morethanwallet.com/appstore/index.js"></script>
+</html>
